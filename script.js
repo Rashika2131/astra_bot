@@ -146,13 +146,9 @@ Guidelines:
 
     // Automated trigger for emergency overlay modal
     const checkAndTriggerEmergency = (text) => {
-        const textLower = text.toLowerCase();
-        const hasEmergencyWord = EMERGENCY_KEYWORDS.some(keyword => textLower.includes(keyword));
-        if (hasEmergencyWord) {
-            showModal(emergencyOverlay);
-            playSynthesizedSound('alarm');
-            return true;
-        }
+        // Disabled automatic trigger on text analysis as per user request.
+        // The emergency overlay is now strictly shown only when the follow-up timer completes
+        // and the user explicitly states they are not feeling better.
         return false;
     };
 
