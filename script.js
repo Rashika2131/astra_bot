@@ -601,7 +601,23 @@ Guidelines:
             });
         });
 
-        messages.push({ role: "user", content: userPrompt });
+        const detected = detectSpeechLanguage(userPrompt);
+        let forceInstruction = "";
+        if (detected === 'en-US') {
+            forceInstruction = "\n\nCRITICAL: Respond STRICTLY in English. Do not write in Hindi or Hinglish.";
+        } else if (detected === 'hi-IN') {
+            if (/[\u0900-\u097F]/.test(userPrompt)) {
+                forceInstruction = "\n\nCRITICAL: Respond STRICTLY in Devanagari Hindi (हिन्दी). Do not write in English or Hinglish.";
+            } else {
+                forceInstruction = "\n\nCRITICAL: Respond STRICTLY in Hinglish (Hindi written in English alphabets, e.g., 'mujhe fever hai, aap rest karein'). Do not write in English or Devanagari Hindi.";
+            }
+        } else if (detected === 'pa-IN') {
+            forceInstruction = "\n\nCRITICAL: Respond STRICTLY in Punjabi.";
+        } else if (detected === 'sa-IN') {
+            forceInstruction = "\n\nCRITICAL: Respond STRICTLY in Sanskrit.";
+        }
+
+        messages.push({ role: "user", content: userPrompt + forceInstruction });
 
         const url = `https://router.huggingface.co/v1/chat/completions`;
 
@@ -676,9 +692,25 @@ Guidelines:
         });
 
         // Add current prompt
+        const detected = detectSpeechLanguage(userPrompt);
+        let forceInstruction = "";
+        if (detected === 'en-US') {
+            forceInstruction = "\n\nCRITICAL: Respond STRICTLY in English. Do not write in Hindi or Hinglish.";
+        } else if (detected === 'hi-IN') {
+            if (/[\u0900-\u097F]/.test(userPrompt)) {
+                forceInstruction = "\n\nCRITICAL: Respond STRICTLY in Devanagari Hindi (हिन्दी). Do not write in English or Hinglish.";
+            } else {
+                forceInstruction = "\n\nCRITICAL: Respond STRICTLY in Hinglish (Hindi written in English alphabets, e.g., 'mujhe fever hai, aap rest karein'). Do not write in English or Devanagari Hindi.";
+            }
+        } else if (detected === 'pa-IN') {
+            forceInstruction = "\n\nCRITICAL: Respond STRICTLY in Punjabi.";
+        } else if (detected === 'sa-IN') {
+            forceInstruction = "\n\nCRITICAL: Respond STRICTLY in Sanskrit.";
+        }
+
         contents.push({
             role: "user",
-            parts: [{ text: userPrompt }]
+            parts: [{ text: userPrompt + forceInstruction }]
         });
 
         const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
