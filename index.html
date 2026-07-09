@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstraX AI - Intelligent Medical Voice Assistant</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Background Glowing Blobs for Premium Aesthetic -->
+    <div class="glow-blob glow-blob-1"></div>
+    <div class="glow-blob glow-blob-2"></div>
+
+    <div class="app-container">
+        <!-- Sidebar Controls -->
+        <aside class="sidebar glass">
+            <div class="sidebar-header">
+                <div class="logo-container" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="logo.png" alt="AstraX Logo" style="height: 45px; width: 45px; object-fit: contain; border-radius: 8px; background: rgba(255,255,255,0.05); padding: 4px;">
+                    <div class="logo-text">
+                        <h2 style="font-size: 1.3rem; font-weight: 700; margin: 0;">AstraX<span>AI</span></h2>
+                        <span class="sub-logo" style="font-size: 0.75rem; color: var(--text-muted);">Virtual Care Assistant</span>
+                    </div>
+                </div>
+                <!-- Online/Offline Badge -->
+                <div id="connection-badge" class="connection-badge online">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Online</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button id="new-chat-btn" class="btn btn-primary btn-glow">
+                    <i class="fa-solid fa-plus"></i> New Session
+                </button>
+                <button id="clear-chat-btn" class="btn btn-secondary">
+                    <i class="fa-solid fa-trash-can"></i> Clear Chat
+                </button>
+                
+                <div class="divider"></div>
+
+                <div class="control-section">
+                    <h3>Voice Controls</h3>
+                    
+                    <div class="control-item">
+                        <label for="voice-speed">
+                            <span class="label-txt"><i class="fa-solid fa-gauge-high"></i> Speech Rate</span>
+                            <span id="speed-val" class="control-val">1.0x</span>
+                        </label>
+                        <input type="range" id="voice-speed" min="0.5" max="2.0" step="0.1" value="1.0" class="slider">
+                    </div>
+
+                    <div class="control-item">
+                        <label for="settings-voice-select">
+                            <span class="label-txt"><i class="fa-solid fa-volume-high"></i> Synth Voice</span>
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="settings-voice-select" class="custom-select">
+                                <option value="auto">Auto-Detect Language</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="control-section">
+                    <h3>Active Monitoring</h3>
+                    <div class="timer-widget-card glass">
+                        <div class="timer-header">
+                            <span class="timer-label"><i class="fa-solid fa-clock pulse-icon" id="timer-pulse-icon"></i> Check-in Timer</span>
+                            <span class="timer-badge" id="timer-badge">Idle</span>
+                        </div>
+                        <div class="timer-body">
+                            <div class="timer-countdown" id="timer-display">--:--</div>
+                            <div class="timer-actions">
+                                <button id="skip-timer-btn" class="btn btn-secondary btn-mini hide" style="width: 100%; margin-top: 8px; font-size: 0.75rem; padding: 6px 10px; border-radius: 6px;">Test Check-in</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="control-section">
+                    <h3>Quick Guide</h3>
+                    <ul class="guide-list">
+                        <li><kbd>Enter</kbd> to Send</li>
+                        <li><kbd>Shift</kbd> + <kbd>Enter</kbd> for line</li>
+                        <li>Ask in Hindi, English, or Hinglish</li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="theme-toggle-btn" class="btn-icon" title="Toggle Theme">
+                    <i class="fa-solid fa-sun icon-light"></i>
+                    <i class="fa-solid fa-moon icon-dark"></i>
+                </button>
+                <div class="disclaimer-trigger" id="open-disclaimer-btn">
+                    <i class="fa-solid fa-circle-info"></i> Medical Disclaimer
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <!-- Header bar -->
+            <header class="chat-header glass">
+                <div class="header-assistant-info">
+                    <div class="ai-avatar-ring small-avatar" id="header-avatar" style="border: none; background: transparent; padding: 0; display: flex; align-items: center; justify-content: center;">
+                        <img src="logo.png" alt="AstraX Logo" style="height: 36px; width: 36px; border-radius: 50%; object-fit: cover; background: white; padding: 2px;">
+                    </div>
+                    <div>
+                        <h3>AstraX Assistant</h3>
+                        <p class="status-subtitle" id="avatar-status-text">Ready to help</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button id="stop-speech-btn" class="btn btn-secondary btn-danger-hover hide" title="Stop AI Voice Output">
+                        <i class="fa-solid fa-volume-xmark"></i> Stop Speaking
+                    </button>
+                </div>
+            </header>
+
+            <!-- Chat History Messages Panel -->
+            <div class="messages-container" id="chat-messages-container">
+                <!-- Welcome Empty State -->
+                <div class="welcome-container" id="welcome-container">
+                    <div class="ai-avatar-ring large-avatar pulsating" id="main-pulsing-avatar" style="border: none; background: transparent; width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; position: relative;">
+                        <img src="logo.png" alt="AstraX Logo" style="height: 100px; width: 100px; border-radius: 50%; object-fit: cover; background: white; padding: 4px; z-index: 2;">
+                        <div class="avatar-wave wave-1" style="z-index: 1;"></div>
+                        <div class="avatar-wave wave-2" style="z-index: 1;"></div>
+                    </div>
+
+                    <!-- Start Onboarding Screen -->
+                    <div id="start-screen" style="text-align: center; margin-top: 10px;">
+                        <h1 style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 5px;">AstraX</h1>
+                        <p class="welcome-subtext" style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 25px;">Your Intelligent Multilingual Medical Assistant</p>
+                        <button id="start-session-btn" class="btn btn-primary btn-glow" style="font-size: 1.1rem; padding: 12px 30px; border-radius: 12px;">
+                            <i class="fa-solid fa-play"></i> Start Session
+                        </button>
+                    </div>
+
+                    <!-- Main Welcome Content (Hidden initially) -->
+                    <div id="welcome-main-content" style="display: none; width: 100%; text-align: center;">
+                        <h1>How can I help you today?</h1>
+                        <p class="welcome-subtext">AstraX AI provides general medical information, home remedies, and self-care recommendations in English, Hindi, and Hinglish. It is not a replacement for professional diagnoses.</p>
+
+                        <!-- Suggested Questions Grid -->
+                        <div class="suggested-questions-grid">
+                        <div class="suggested-card" data-question="What are some natural home remedies for acid reflux?">
+                            <div class="card-icon"><i class="fa-solid fa-leaf"></i></div>
+                            <h4>Acid Reflux Remedies</h4>
+                            <p>Suggested natural ways to ease heartburn</p>
+                        </div>
+                        <div class="suggested-card" data-question="I have a sore throat and dry cough. What basic self-care can I do at home?">
+                            <div class="card-icon"><i class="fa-solid fa-head-side-cough"></i></div>
+                            <h4>Sore Throat & Cough</h4>
+                            <p>Tips to soothe scratchy throat and dry cough</p>
+                        </div>
+                        <div class="suggested-card" data-question="Mujhe halka sa bukhar feel ho raha hai, home tips batayein.">
+                            <div class="card-icon"><i class="fa-solid fa-temperature-three-quarters"></i></div>
+                            <h4>Halka Bukhar Tips</h4>
+                            <p>Hinglish advice for mild fever and body rest</p>
+                        </div>
+                        <div class="suggested-card" data-question="What are the warning signs that indicate a medical emergency?">
+                            <div class="card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            <h4>Emergency Red Flags</h4>
+                            <p>Warning symptoms that need immediate hospital care</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Chat Input panel -->
+            <footer class="input-panel glass" id="chat-input-panel" style="display: none;">
+                <div class="input-container">
+                    <!-- Audio Wave Indicator when Voice input is active -->
+                    <div id="voice-wave-container" class="voice-wave-container hide">
+                        <span class="voice-bar bar-1"></span>
+                        <span class="voice-bar bar-2"></span>
+                        <span class="voice-bar bar-3"></span>
+                        <span class="voice-bar bar-4"></span>
+                        <span class="voice-bar bar-5"></span>
+                        <span class="voice-wave-text">Listening... Speak now</span>
+                    </div>
+
+                    <div class="input-row">
+                        <button id="mic-btn" class="btn-circle btn-mic" title="Voice Input (STT)">
+                            <i class="fa-solid fa-microphone"></i>
+                        </button>
+                        <textarea id="chat-input" placeholder="Type your symptom or health question here..." rows="1" maxlength="2000"></textarea>
+                        <div class="input-actions">
+                            <span id="char-counter" class="char-counter">0/2000</span>
+                            <button id="send-btn" class="btn-circle btn-send" title="Send Message">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Medical Disclaimer Overlay Modal -->
+    <div id="disclaimer-modal" class="modal-overlay hide">
+        <div class="modal-card glass animate-slide-up">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-triangle-exclamation warning-color"></i> Important Medical Disclaimer</h3>
+                <button class="modal-close" id="close-disclaimer-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Please read this carefully before using AstraX AI:</strong></p>
+                <ul>
+                    <li>AstraX AI is an AI-powered conversational tool designed to provide <strong>general health information</strong> and <strong>basic self-care suggestions</strong>.</li>
+                    <li>It <strong>does not diagnose diseases</strong>, prescribe medications, or recommend treatments.</li>
+                    <li>The information provided here should not be considered a substitute for professional medical advice, diagnosis, or clinical evaluation.</li>
+                    <li>If you are experiencing severe pain, chest tightness, breathing difficulties, sudden weakness, or any other life-threatening symptoms, please seek professional emergency care immediately.</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="disclaimer-accept-btn">I Understand & Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Mode Overlay Alert -->
+    <div id="emergency-overlay" class="modal-overlay emergency-overlay-bg hide">
+        <div class="modal-card emergency-card glass animate-shake">
+            <div class="emergency-header">
+                <div class="emergency-icon-ring">
+                    <i class="fa-solid fa-circle-exclamation blink-animation"></i>
+                </div>
+                <h2>Critical Warning: Potential Emergency</h2>
+            </div>
+            <div class="modal-body">
+                <p class="emergency-alert-text">Based on the symptoms described, you may be experiencing a medical emergency that requires immediate attention.</p>
+                <div class="emergency-action-plan">
+                    <h4>Recommended Action Plan:</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-phone-volume"></i> <strong>Call emergency services immediately</strong> (102 / 108 in India, 911 in US, or your local emergency hotline).</li>
+                        <li><i class="fa-solid fa-people-arrows"></i> Inform a family member, neighbor, or friend nearby right now.</li>
+                        <li><i class="fa-solid fa-chair"></i> Sit down or lie down in a comfortable position and do not exert yourself.</li>
+                        <li><i class="fa-solid fa-car-side"></i> Do not drive yourself to the hospital. Wait for the ambulance or emergency services.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger btn-pulse" onclick="window.open('tel:108')">
+                    <i class="fa-solid fa-phone"></i> Call Emergency (108)
+                </button>
+                <button class="btn btn-secondary" id="close-emergency-btn">Dismiss Warning</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Configurations first, then core JavaScript -->
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

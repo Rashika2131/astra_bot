@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AstraX AI - Connection Diagnostics</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #0f172a; color: #f8fafc; line-height: 1.5; }
+        h1 { color: #10b981; }
+        pre { background: #1e293b; padding: 15px; border-radius: 8px; border: 1px solid #334155; overflow-x: auto; max-width: 900px; white-space: pre-wrap; word-break: break-all; }
+        .success { color: #4ade80; }
+        .error { color: #f87171; }
+        button { padding: 10px 15px; background: #10b981; border: none; color: white; border-radius: 5px; cursor: pointer; font-family: monospace; font-weight: bold; margin-bottom: 20px; }
+        button:hover { background: #059669; }
+    </style>
+</head>
+<body>
+    <h1>AstraX Connection Diagnostic Utility</h1>
+    <p>This page tests connection routes to Hugging Face to identify exactly why the API is failing.</p>
+    <button onclick="runDiagnostics()">Run Diagnostics</button>
+
+    <h2>1. Testing Router completions with Token</h2>
+    <pre id="test-1">Click Run Diagnostics...</pre>
+
+    <h2>2. Testing Model-specific completions with Token via corsproxy.io</h2>
+    <pre id="test-2">Click Run Diagnostics...</pre>
+
+    <h2>3. Testing Model-specific completions without CORS proxy (Direct)</h2>
+    <pre id="test-3">Click Run Diagnostics...</pre>
+
+    <script>
+        const token = "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";
+        const modelId = "Qwen/Qwen2.5-7B-Instruct";
+
+        async function testRoute(name, url, useHeaders) {
+            const el = document.getElementById(name);
+            el.className = "";
+            el.innerText = "Running fetch request...";
+            
+            const headers = { "Content-Type": "application/json" };
+            if (useHeaders) {
+                headers["Authorization"] = `Bearer ${token}`;
+            }
+
+            const payload = {
+                model: modelId,
+                messages: [
+                    { role: "user", content: "Say hi" }
+                ],
+                max_tokens: 10
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: headers,
+                    body: JSON.stringify(payload)
+                });
+
+                const text = await response.text();
+                el.innerText = `Status: ${response.status} ${response.statusText}\n\nResponse:\n${text}`;
+                if (response.ok) {
+                    el.className = "success";
+                } else {
+                    el.className = "error";
+                }
+            } catch (err) {
+                el.className = "error";
+                el.innerText = `Fetch Exception:\n${err.stack || err.message || err}`;
+            }
+        }
+
+        function runDiagnostics() {
+            // Test 1: Router endpoint
+            testRoute("test-1", `https://corsproxy.io/?https://router.huggingface.co/hf-inference/v1/chat/completions`, true);
+            
+            // Test 2: Model specific endpoint with corsproxy.io
+            testRoute("test-2", `https://corsproxy.io/?https://api-inference.huggingface.co/models/${modelId}/v1/chat/completions`, true);
+
+            // Test 3: Model specific direct (should show CORS TypeError in most browsers)
+            testRoute("test-3", `https://api-inference.huggingface.co/models/${modelId}/v1/chat/completions`, true);
+        }
+    </script>
+</body>
+</html>
