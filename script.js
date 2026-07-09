@@ -522,6 +522,13 @@ Guidelines:
             audioBtn.addEventListener('click', () => speakText(content));
             actions.appendChild(audioBtn);
 
+            // Audio Stop button
+            const stopAudioBtn = document.createElement('button');
+            stopAudioBtn.className = 'btn-mini';
+            stopAudioBtn.innerHTML = `<i class="fa-solid fa-volume-xmark"></i> Stop`;
+            stopAudioBtn.addEventListener('click', () => stopSpeaking());
+            actions.appendChild(stopAudioBtn);
+
             bubble.appendChild(actions);
         }
         row.appendChild(bubble);
