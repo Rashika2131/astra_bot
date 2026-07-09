@@ -484,7 +484,13 @@ Guidelines:
             avatar.innerText = 'U';
         } else {
             avatar.className = 'ai-avatar-ring small-avatar';
-            avatar.innerHTML = `<div class="ai-avatar-core"><i class="fa-solid fa-wave-square"></i></div>`;
+            avatar.style.border = 'none';
+            avatar.style.background = 'transparent';
+            avatar.style.padding = '0';
+            avatar.style.display = 'flex';
+            avatar.style.alignItems = 'center';
+            avatar.style.justifyContent = 'center';
+            avatar.innerHTML = `<img src="logo.png" alt="AstraX Logo" style="height: 36px; width: 36px; border-radius: 50%; object-fit: cover; background: white; padding: 2px;">`;
         }
         row.appendChild(avatar);
 
