@@ -617,14 +617,15 @@ Guidelines:
         const modelId = conf.HF_MODEL_ID || "meta-llama/Llama-3.1-8B-Instruct";
         
         if (!token || token.trim() === "" || token === "YOUR_HF_TOKEN" || token.includes("YOUR_HF_TOKEN_")) {
-            const userToken = prompt("Please enter a valid Hugging Face API Token (it will be saved locally in your browser):");
-            if (userToken && userToken.trim() !== "") {
-                localStorage.setItem('hf_api_token', userToken.trim());
-                conf = getConfig();
-                token = conf.HF_API_TOKEN;
-            } else {
-                throw new Error("HF_TOKEN_MISSING");
+            const settingsHfToken = document.getElementById('settings-hf-token');
+            if (settingsHfToken) {
+                settingsHfToken.style.borderColor = "#ff4d4d";
+                settingsHfToken.focus();
+                setTimeout(() => {
+                    settingsHfToken.style.borderColor = "var(--border-glass)";
+                }, 3000);
             }
+            throw new Error("HF_TOKEN_MISSING");
         }
 
         const messages = [];
@@ -682,10 +683,13 @@ Guidelines:
             if (response.status === 403 || errText.toLowerCase().includes("gated")) {
                 throw new Error("HF_GATED_MODEL");
             } else if (response.status === 401) {
-                const userToken = prompt("Your Hugging Face Token is expired, invalid, or revoked. Please enter a valid Hugging Face API Token:");
-                if (userToken && userToken.trim() !== "") {
-                    localStorage.setItem('hf_api_token', userToken.trim());
-                    return callHuggingFaceAPI(userPrompt); // Retry API call
+                const settingsHfToken = document.getElementById('settings-hf-token');
+                if (settingsHfToken) {
+                    settingsHfToken.style.borderColor = "#ff4d4d";
+                    settingsHfToken.focus();
+                    setTimeout(() => {
+                        settingsHfToken.style.borderColor = "var(--border-glass)";
+                    }, 3000);
                 }
                 throw new Error("HF_UNAUTHORIZED");
             }
@@ -1062,11 +1066,11 @@ Guidelines:
                         const loadingTime = hfErr.message.split(":")[1] || 20;
                         addNotificationMessage(`The Hugging Face model is currently loading (estimated: ${loadingTime}s). Serving local response.`);
                     } else if (hfErr.message === "HF_TOKEN_MISSING") {
-                        addNotificationMessage("Hugging Face API Token is missing. Serving local simulated response.");
+                        addNotificationMessage("Hugging Face API Token is missing. Please paste a valid token in the sidebar settings.");
                     } else if (hfErr.message === "HF_GATED_MODEL") {
                         addNotificationMessage("Gated Model Terms Required: To use MedGemma, make sure your token has accepted terms at 'huggingface.co/google/medgemma-1.5-4b-it'. Falling back to local response.");
                     } else if (hfErr.message === "HF_UNAUTHORIZED") {
-                        addNotificationMessage("Hugging Face authorization failed. Please check your HF Token. Serving local simulated response.");
+                        addNotificationMessage("Authorization failed. Your HF Token is invalid or expired. Please update it in the sidebar settings.");
                     } else {
                         addNotificationMessage("Hugging Face Inference call failed. Serving local simulated response.");
                     }
@@ -1219,6 +1223,47 @@ Guidelines:
             speakText(greetingText);
             if (recognition) {
                 recognition.lang = 'en-US';
+            }
+        });
+    }
+
+    // Sidebar API Settings Token Saver Listener
+    const settingsHfToken = document.getElementById('settings-hf-token');
+    const saveHfTokenBtn = document.getElementById('save-hf-token-btn');
+
+    if (settingsHfToken && saveHfTokenBtn) {
+        // Load initial value from localStorage if set
+        const savedToken = localStorage.getItem('hf_api_token');
+        if (savedToken) {
+            settingsHfToken.value = savedToken;
+        }
+
+        saveHfTokenBtn.addEventListener('click', () => {
+            const tokenVal = settingsHfToken.value.trim();
+            if (tokenVal) {
+                localStorage.setItem('hf_api_token', tokenVal);
+                saveHfTokenBtn.innerHTML = `<i class="fa-solid fa-check"></i>`;
+                settingsHfToken.style.borderColor = "#2ecc71";
+                setTimeout(() => {
+                    saveHfTokenBtn.innerHTML = `<i class="fa-solid fa-save"></i>`;
+                    settingsHfToken.style.borderColor = "var(--border-glass)";
+                }, 2000);
+            } else {
+                localStorage.removeItem('hf_api_token');
+                saveHfTokenBtn.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+                settingsHfToken.style.borderColor = "#ff4d4d";
+                setTimeout(() => {
+                    saveHfTokenBtn.innerHTML = `<i class="fa-solid fa-save"></i>`;
+                    settingsHfToken.style.borderColor = "var(--border-glass)";
+                }, 2000);
+            }
+        });
+
+        // Also save on pressing Enter key inside the token input
+        settingsHfToken.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                saveHfTokenBtn.click();
             }
         });
     }
