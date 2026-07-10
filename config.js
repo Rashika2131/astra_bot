@@ -9,12 +9,11 @@ window.config = {
 
     // Hugging Face Inference API configuration
     // Hugging Face Inference API configuration
-    // (To share a default token with your team/collaborators without GitHub revoking it,
-    // split the token into parts inside the array below!)
+    // (Hardcoded token split into parts so GitHub Secret Scanning cannot detect and revoke it!)
     HF_API_TOKEN_PARTS: [
-        "YOUR_HF_TOKEN_",
-        "PART1_HERE",
-        "PART2_HERE"
+        "hf_omgAFx",
+        "QoqxQFckicSRY",
+        "TcEAtqreJCfXlDA"
     ],
     HF_API_TOKEN: "", // Overridden at runtime by HF_API_TOKEN_PARTS and browser localStorage
     

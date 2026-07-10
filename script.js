@@ -1229,46 +1229,7 @@ Guidelines:
         });
     }
 
-    // Sidebar API Settings Token Saver Listener
-    const settingsHfToken = document.getElementById('settings-hf-token');
-    const saveHfTokenBtn = document.getElementById('save-hf-token-btn');
 
-    if (settingsHfToken && saveHfTokenBtn) {
-        // Load initial value from localStorage if set
-        const savedToken = localStorage.getItem('hf_api_token');
-        if (savedToken) {
-            settingsHfToken.value = savedToken;
-        }
-
-        saveHfTokenBtn.addEventListener('click', () => {
-            const tokenVal = settingsHfToken.value.trim();
-            if (tokenVal) {
-                localStorage.setItem('hf_api_token', tokenVal);
-                saveHfTokenBtn.innerHTML = `<i class="fa-solid fa-check"></i>`;
-                settingsHfToken.style.borderColor = "#2ecc71";
-                setTimeout(() => {
-                    saveHfTokenBtn.innerHTML = `<i class="fa-solid fa-save"></i>`;
-                    settingsHfToken.style.borderColor = "var(--border-glass)";
-                }, 2000);
-            } else {
-                localStorage.removeItem('hf_api_token');
-                saveHfTokenBtn.innerHTML = `<i class="fa-solid fa-trash"></i>`;
-                settingsHfToken.style.borderColor = "#ff4d4d";
-                setTimeout(() => {
-                    saveHfTokenBtn.innerHTML = `<i class="fa-solid fa-save"></i>`;
-                    settingsHfToken.style.borderColor = "var(--border-glass)";
-                }, 2000);
-            }
-        });
-
-        // Also save on pressing Enter key inside the token input
-        settingsHfToken.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                saveHfTokenBtn.click();
-            }
-        });
-    }
 
     // Mobile Sidebar responsiveness toggler
     const docHtml = document.documentElement;
