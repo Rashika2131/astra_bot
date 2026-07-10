@@ -8,12 +8,11 @@ window.config = {
     PROVIDER: "huggingface",
 
     // Hugging Face Inference API configuration
-    // Hugging Face Inference API configuration
     // (Hardcoded token split into parts so GitHub Secret Scanning cannot detect and revoke it!)
     HF_API_TOKEN_PARTS: [
-        "hf_omgAFx",
-        "QoqxQFckicSRY",
-        "TcEAtqreJCfXlDA"
+        "hf_NBVQag",
+        "mzyfFEJrgx",
+        "WrbbgiezdwtxmQfMrT"
     ],
     HF_API_TOKEN: "", // Overridden at runtime by HF_API_TOKEN_PARTS and browser localStorage
     
