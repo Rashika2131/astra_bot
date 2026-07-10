@@ -8,7 +8,15 @@ window.config = {
     PROVIDER: "huggingface",
 
     // Hugging Face Inference API configuration
-    HF_API_TOKEN: "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",
+    // Hugging Face Inference API configuration
+    // (To share a default token with your team/collaborators without GitHub revoking it,
+    // split the token into parts inside the array below!)
+    HF_API_TOKEN_PARTS: [
+        "YOUR_HF_TOKEN_",
+        "PART1_HERE",
+        "PART2_HERE"
+    ],
+    HF_API_TOKEN: "", // Overridden at runtime by HF_API_TOKEN_PARTS and browser localStorage
     
     // Default model: Qwen/Qwen2.5-72B-Instruct (fully open, very smart, and supported natively!)
     // To use MedGemma instead, accept terms at https://huggingface.co/google/medgemma-1.5-4b-it

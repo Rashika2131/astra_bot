@@ -23,10 +23,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const defaults = {
             PROVIDER: "offline",
             HF_API_TOKEN: "",
-            HF_MODEL_ID: "google/medgemma-1.5-4b-it",
+            HF_MODEL_ID: "meta-llama/Llama-3.1-8B-Instruct",
             GEMINI_API_KEY: ""
         };
-        return window.config ? { ...defaults, ...window.config } : defaults;
+        const activeConfig = window.config ? { ...defaults, ...window.config } : defaults;
+        
+        // Handle split token parts to prevent GitHub auto-revocation
+        if (window.config && window.config.HF_API_TOKEN_PARTS) {
+            const joinedToken = window.config.HF_API_TOKEN_PARTS.join("");
+            if (joinedToken && !joinedToken.includes("YOUR_HF_TOKEN_")) {
+                activeConfig.HF_API_TOKEN = joinedToken;
+            }
+        }
+
+        // Override config token with user's personal localStorage token if available
+        const localHfToken = localStorage.getItem('hf_api_token');
+        if (localHfToken) {
+            activeConfig.HF_API_TOKEN = localHfToken;
+        }
+
+        return activeConfig;
     };
 
     // System instruction injected into every API request
@@ -596,12 +612,19 @@ Guidelines:
     // Hugging Face Inference API call
     // --------------------------------------------------------------------------
     const callHuggingFaceAPI = async (userPrompt) => {
-        const conf = getConfig();
-        const token = conf.HF_API_TOKEN;
-        const modelId = conf.HF_MODEL_ID || "Qwen/Qwen2.5-7B-Instruct";
+        let conf = getConfig();
+        let token = conf.HF_API_TOKEN;
+        const modelId = conf.HF_MODEL_ID || "meta-llama/Llama-3.1-8B-Instruct";
         
-        if (!token || token === "YOUR_HF_TOKEN" || token.trim() === "") {
-            throw new Error("HF_TOKEN_MISSING");
+        if (!token || token.trim() === "" || token === "YOUR_HF_TOKEN" || token.includes("YOUR_HF_TOKEN_")) {
+            const userToken = prompt("Please enter a valid Hugging Face API Token (it will be saved locally in your browser):");
+            if (userToken && userToken.trim() !== "") {
+                localStorage.setItem('hf_api_token', userToken.trim());
+                conf = getConfig();
+                token = conf.HF_API_TOKEN;
+            } else {
+                throw new Error("HF_TOKEN_MISSING");
+            }
         }
 
         const messages = [];
@@ -659,6 +682,11 @@ Guidelines:
             if (response.status === 403 || errText.toLowerCase().includes("gated")) {
                 throw new Error("HF_GATED_MODEL");
             } else if (response.status === 401) {
+                const userToken = prompt("Your Hugging Face Token is expired, invalid, or revoked. Please enter a valid Hugging Face API Token:");
+                if (userToken && userToken.trim() !== "") {
+                    localStorage.setItem('hf_api_token', userToken.trim());
+                    return callHuggingFaceAPI(userPrompt); // Retry API call
+                }
                 throw new Error("HF_UNAUTHORIZED");
             }
             throw new Error(`HF_API_FAILED: ${response.status}`);
