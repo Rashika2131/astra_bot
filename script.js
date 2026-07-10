@@ -788,62 +788,76 @@ Guidelines:
     // --------------------------------------------------------------------------
     const localSymptomDatabase = {
         headache: {
-            "en-US": "**Hydration, Rest & Cold Compress**\n\n* **Do**: Drink at least 500ml of fresh water immediately. Rest in a quiet, dark room for 20-30 minutes. Apply a cool, damp compress to your forehead.\n* **Don't**: Avoid looking at bright screens (phones, computers). Do not drink caffeine or alcohol.",
-            "hi-IN": "**पानी पिएं, आराम करें और ठंडी पट्टी**\n\n* **क्या करें**: तुरंत कम से कम 500 मिलीलीटर ताजा पानी पिएं। 20-30 मिनट के लिए शांत, अंधेरे कमरे में आराम करें। माथे या कनपटी पर ठंडी, गीली पट्टी लगाएं।\n* **क्या न करें**: चमकदार स्क्रीन (फोन, कंप्यूटर, टीवी) को देखने से बचें। कैफीन या शराब का सेवन न करें।",
-            "pa-IN": "**ਸਿਰ ਦਰਦ (Headache) ਲਈ ਉਪਚਾਰ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਪਾਣੀ ਪੀਓ ਅਤੇ ਆਰਾਮ ਕਰੋ। ਸ਼ਾਂਤ ਕਮਰੇ ਵਿੱਚ ਲੇਟ ਜਾਓ। ਮੱਥੇ 'ਤੇ ਠੰਢੀ ਪੱਟੀ ਰੱਖੋ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਮੋਬਾਈਲ ਜਾਂ ਟੀਵੀ ਸਕ੍ਰੀਨ ਨਾ ਦੇਖੋ। ਚਾਹ ਜਾਂ ਕੌਫ਼ੀ ਤੋਂ ਪਰਹੇਜ਼ ਕਰੋ।",
-            "sa-IN": "**शिरोवेदना (Headache) उपचारः**\n\n* **करणीयम्**: शीघ्रं जलं पिबतु, विश्रामं च करोतु। शान्ते अन्धकारे प्रकोष्टे शयनं करोतु। ललाटे शीतलपट्टं धरतु।\n* **अकरणीयम्**: सङ्गणकस्य वा दूरभाषस्य वा पटलम् मा पश्यतु। चायं वा कॉफी पेयम् मा पिबतु।"
+            "en-US": "I am sorry to hear you have a headache. Let me help you with some safe home remedies:\n\n**Hydration, Rest & Cold Compress**\n\n* **Do**: Drink at least 500ml of fresh water immediately. Rest in a quiet, dark room for 20-30 minutes. Apply a cool, damp compress to your forehead.\n* **Don't**: Avoid looking at bright screens (phones, computers). Do not drink caffeine or alcohol.",
+            "hi-IN": "मुझे यह सुनकर खेद है कि आपके सिर में दर्द है। यहाँ कुछ सुरक्षित घरेलू उपाय दिए गए हैं:\n\n**पानी पिएं, आराम करें और ठंडी पट्टी**\n\n* **क्या करें**: तुरंत कम से कम 500 मिलीलीटर ताजा पानी पिएं। 20-30 मिनट के लिए शांत, अंधेरे कमरे में आराम करें। माथे पर ठंडी, गीली पट्टी लगाएं।\n* **क्या न करें**: चमकदार स्क्रीन (फोन, कंप्यूटर, टीवी) देखने से बचें। कैफीन या शराब का सेवन न करें।",
+            "hinglish": "Mujhe sunkar dukh hua ki aapke sir me dard hai. Aap ye safe home remedies try karein:\n\n**Paani pijiye, rest karein aur thandi patti rakhein**\n\n* **Kya karein**: Turant kam se kam 1-2 glass paani pijiye. Ek andhere aur shant kamre me 20-30 minutes rest karein. Maathe par thandi aur geeli patti rakhein.\n* **Kya na karein**: Mobile, computer ya TV screen mat dekhein. Chai, coffee ya cold drinks se parhez karein.",
+            "pa-IN": "ਮੈਨੂੰ ਅਫ਼ਸੋਸ ਹੈ ਕਿ ਤੁਹਾਡੇ ਸਿਰ ਵਿੱਚ ਦਰਦ ਹੈ। ਇੱਥੇ ਕੁਝ ਸੁਰੱਖਿਅਤ ਘਰੇਲੂ ਉਪਾਅ ਹਨ:\n\n**ਪਾਣੀ ਪੀਓ ਅਤੇ ਆਰਾਮ ਕਰੋ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਪਾਣੀ ਪੀਓ ਅਤੇ ਆਰਾਮ ਕਰੋ। ਸ਼ਾਂਤ ਕਮਰੇ ਵਿੱਚ ਲੇਟ ਜਾਓ। ਮੱਥੇ 'ਤੇ ਠੰਢੀ ਪੱਟੀ ਰੱਖੋ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਮੋਬਾਈਲ ਜਾਂ ਟੀਵੀ ਸਕ੍ਰੀਨ ਨਾ ਦੇਖੋ। ਚਾਹ ਜਾਂ ਕੌਫ਼ੀ ਤੋਂ ਪਰਹੇਜ਼ ਕਰੋ।",
+            "sa-IN": "कष्टं जातं यत् भवतः शिरोवेदना अस्ति। अत्र केचन सुकरोपचाराः सन्ति:\n\n**शिरोवेदना उपचारः**\n\n* **करणीयम्**: शीघ्रं जलं पिबतु, विश्रामं च करोतु। शान्ਤੇ अन्धकारे प्रकोष्टे शयनं करोतु। ललाटे शीतलपट्टं धरतु।\n* **अकरणीयम्**: सङ्गणकस्य वा दूरभाषस्य वा पटलम् मा पश्यतु। चायं वा कॉफी पेयम् मा पिबतु।"
         },
         fever: {
-            "en-US": "**Hydration & Cool Compress Sponge Bath**\n\n* **Do**: Drink water, herbal tea, or electrolytes. Take a lukewarm sponge bath. Rest and wear lightweight clothing.\n* **Don't**: Do not bundle up in heavy blankets. Avoid strenuous activities or physical strain.",
-            "hi-IN": "**पानी पिएं और गुनगुने पानी की पट्टी करें**\n\n* **क्या करें**: हाइड्रेटेड रहने के लिए पानी या ओआरएस (ORS) पिएं। गुनगुने पानी से स्पंज बाथ लें (कंपकंपी से बचें)। आराम करें और हल्के कपड़े पहनें।\n* **क्या न करें**: भारी कंबल न ओढ़ें, इससे तापमान बढ़ सकता है। शारीरिक मेहनत या भारी काम न करें।",
-            "pa-IN": "**ਬੁਖਾਰ (Fever) ਲਈ ਉਪਚਾਰ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਹਲਕੇ ਕੱਪੜੇ ਪਾਓ ਅਤੇ ਆਰਾਮ ਕਰੋ। ਗਰਮ ਪਾਣੀ ਜਾਂ ਸੂਪ ਪੀਓ। ਸਰੀਰ ਦਾ ਤਾਪਮਾਨ ਚੈੱਕ ਕਰਦੇ ਰਹੋ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਭਾਰੀ ਕੰਬਲ ਨਾ ਲਓ। ਠੰਢੇ ਪਾਣੀ ਨਾਲ ਨਾ ਨਹਾਓ।",
-            "sa-IN": "**ज्वरः (Fever) उपचारः**\n\n* **करणीयम्**: | लघुवस्त्राणि धरतु, विश्रामं च करोतु। कोष्णं जलं वा सूपं पिबतु। ज्वरमापकेन शरीरतापं वारं वारं मापयतु।\n* **अकरणीयम्**: गुरु कम्बलं मा ओर्णोतु। शीतलजलेन स्नानं मा करोतु।"
+            "en-US": "I am sorry to hear you are suffering from a fever. Let me help you with some safe home remedies:\n\n**Hydration & Cool Compress Sponge Bath**\n\n* **Do**: Drink water, herbal tea, or electrolytes. Take a lukewarm sponge bath. Rest and wear lightweight clothing.\n* **Don't**: Do not bundle up in heavy blankets. Avoid strenuous activities or physical strain.",
+            "hi-IN": "मुझे यह सुनकर खेद है कि आपको बुखार है। यहाँ कुछ सुरक्षित घरेलू उपाय दिए गए हैं:\n\n**पानी पिएं और गुनगुने पानी की पट्टी करें**\n\n* **क्या करें**: हाइड्रेटेड रहने के लिए पानी या ओआरएस (ORS) पिएं। गुनगुने पानी से स्पंज बाथ लें। आराम करें और हल्के कपड़े पहनें।\n* **क्या न करें**: भारी कंबल न ओढ़ें, इससे शरीर का तापमान बढ़ सकता है। शारीरिक मेहनत या भारी काम न करें।",
+            "hinglish": "Mujhe sunkar dukh hua ki aapko bukhar hai. Aap ye safe home remedies try karein:\n\n**Paani pijiye aur gungune paani ki patti karein**\n\n* **Kya karein**: Hydrated rehne ke liye paani ya ORS pijiye. Gungune paani se sponge bath (patti) karein. Aaram karein aur dheeley kapde pehnein.\n* **Kya na karein**: Bhaari kambal (heavy blankets) mat odhein, isse body temperature badh sakta hai. Mehnat ya bhaari kaam bilkul na karein.",
+            "pa-IN": "ਮੈਨੂੰ ਅਫ਼ਸੋਸ ਹੈ ਕਿ ਤੁਹਾਨੂੰ ਬੁਖਾਰ ਹੈ। ਇੱਥੇ ਕੁਝ ਸੁਰੱਖਿਅਤ ਘਰੇਲੂ ਉਪਾਅ ਹਨ:\n\n**ਬੁਖਾਰ ਲਈ ਉਪਚਾਰ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਹਲਕੇ ਕੱਪੜੇ ਪਾਓ ਅਤੇ ਆਰਾਮ ਕਰੋ। ਗਰਮ ਪਾਣੀ ਜਾਂ ਸੂਪ ਪੀਓ। ਸਰੀਰ ਦਾ ਤਾਪਮਾਨ ਚੈੱਕ ਕਰਦੇ ਰਹੋ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਭਾਰੀ ਕੰਬਲ ਨਾ ਲਓ। ਠੰਢੇ ਪਾਣੀ ਨਾਲ ਨਾ ਨਹਾਓ।",
+            "sa-IN": "कष्टं जातं यत् भवतः ज्वरः अस्ति। अत्र केचन सुकरोपचाराः सन्ति:\n\n**ज्वरः उपचारः**\n\n* **करणीयम्**: लघुवस्त्राणि धरतु, विश्रामं च करोतु। कोष्णं जलं वा सूपं पिबतु। शरीरतापं वारं वारं मापयतु।\n* **अकरणीयम्**: गुरु कम्बलं मा ओर्णोतु। शीतलजलेन स्नानं मा करोतु।"
         },
         cough: {
-            "en-US": "**Warm Salt Gargle & Honey**\n\n* **Do**: Drink warm water with honey (1-2 teaspoons). Gargle with warm salt water. Use steam inhalation to moisten airways.\n* **Don't**: Do not consume cold drinks or fried foods. Avoid smoking or dusty environments.",
-            "hi-IN": "**गुनगुने नमक के पानी से गरारे और शहद**\n\n* **क्या करें**: शहद के साथ गुनगुना पानी या हर्बल चाय पिएं। गुनगुने नमक के पानी से गरारे करें। भाप लें या ह्यूमिडिफायर का उपयोग करें।\n* **क्या न करें**: ठंडी चीजें, आइसक्रीम या तला हुआ भोजन न खाएं। धूम्रपान, धुएं या धूल भरे वातावरण से बचें।",
-            "pa-IN": "**ਖੰਘ (Cough) ਲਈ ਉਪਚਾਰ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਕੋਸੇ ਪਾਣੀ ਵਿੱਚ ਨਮਕ ਪਾ ਕੇ ਗਰਾਰੇ ਕਰੋ। ਸ਼ਹਿਦ ਅਤੇ ਅਦਰਕ ਦਾ ਸੇਵਨ ਕਰੋ। ਭਾਫ਼ ਲਓ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਠੰਢਾ ਪਾਣੀ ਜਾਂ ਆਈਸਕ੍ਰੀਮ ਨਾ ਖਾਓ। ਧੂੜ ਮਿੱਟੀ ਤੋਂ ਬਚੋ।",
-            "sa-IN": "**कासः (Cough) उपचारः**\n\n* **करणीयम्**: लवणमिश्रितकोष्णजलेन गण्डूषं करोतु। आर्द्रकरसेन सह मधु सेवतु। बाष्पग्रहणं करोतु।\n* **अकरणीयम्**: शीतलपेयानि वा हिमपयः मा खादतु। धूम्रपानं धूलिकणान् च त्यजतु।"
+            "en-US": "I am sorry to hear you have a cough. Let me help you with some safe home remedies:\n\n**Warm Salt Gargle & Honey**\n\n* **Do**: Drink warm water with honey (1-2 teaspoons). Gargle with warm salt water. Use steam inhalation to moisten airways.\n* **Don't**: Do not consume cold drinks or fried foods. Avoid smoking or dusty environments.",
+            "hi-IN": "मुझे यह सुनकर खेद है कि आपको खांसी है। यहाँ कुछ सुरक्षित घरेलू उपाय दिए गए हैं:\n\n**गुनगुने नमक के पानी से गरारे और शहद**\n\n* **क्या करें**: शहद के साथ गुनगुना पानी या हर्बल चाय पिएं। गुनगुने नमक के पानी से गरारे करें। भाप लें या ह्यूमिडिफायर का उपयोग करें।\n* **क्या न करें**: ठंडी चीजें, आइसक्रीम या तला हुआ भोजन न खाएं। धूम्रपान, धुएं या धूल भरे वातावरण से बचें।",
+            "hinglish": "Mujhe sunkar dukh hua ki aapko khansi hai. Aap ye safe home remedies try karein:\n\n**Gungune namak ke paani se garare aur shahad**\n\n* **Kya karein**: Shahad ke saath gunguna paani ya herbal chai pijiye. Din me 2-3 baar gungune namak ke paani se garare (gargles) karein. Bhaap (steam) lein.\n* **Kya na karein**: Thandi cheezein, ice cream ya tala hua (fried) khana na khayein. Dhool aur dhuayein se parhez karein.",
+            "pa-IN": "ਮੈਨੂੰ ਅਫ਼ਸੋਸ ਹੈ ਕਿ ਤੁਹਾਨੂੰ ਖੰਘ ਹੈ। ਇੱਥੇ ਕੁਝ ਸੁਰੱਖਿਅਤ ਘਰੇਲੂ ਉਪਾਅ ਹਨ:\n\n**ਖੰਘ ਲਈ ਉਪਚਾਰ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਕੋਸੇ ਪਾਣੀ ਵਿੱਚ ਨਮਕ ਪਾ ਕੇ ਗਰਾਰੇ ਕਰੋ। ਸ਼ਹਿਦ ਅਤੇ ਅਦਰਕ ਦਾ ਸੇਵਨ ਕਰੋ। ਭਾਫ਼ ਲਓ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਠੰਢਾ ਪਾਣੀ ਜਾਂ ਆਈਸਕ੍ਰੀਮ ਨਾ ਖਾਓ। ਧੂੜ ਮਿੱਟੀ ਤੋਂ ਬਚੋ।",
+            "sa-IN": "कष्टं जातं यत् भवतः कासः अस्ति। अत्र केचन सुकरोपचाराः सन्ति:\n\n**कासः उपचारः**\n\n* **करणीयम्**: लवणमिश्रितकोष्णजलेन गण्डूषं करोतु। आर्द्रकरसेन सह मधु सेवतु। बाष्पग्रहणं करोतु।\n* **अकरणीयम्**: शीतलपेयानि वा हिमपयः मा खादतु। धूम्रपानं धूलिकणान् च त्यजतु।"
         },
         cold: {
-            "en-US": "**Steam Inhalation & Hydration**\n\n* **Do**: Drink plenty of hot fluids (herbal teas, warm soups). Inhale steam from a bowl of hot water. Rest as much as possible.\n* **Don't**: Do not consume cold items or sit in AC drafts. Avoid heavy workouts.",
-            "hi-IN": "**भाप लेना और गर्म तरल पदार्थ**\n\n* **क्या करें**: गर्म तरल पदार्थ (हर्बल चाय, गर्म सूप) पिएं। गर्म पानी के कटोरे से भाप लें। शरीर को आराम दें।\n* **क्या न करें**: ठंडी चीजें न खाएं और ठंडी एसी (AC) हवा में न बैठें। भारी वर्कआउट से बचें।",
-            "pa-IN": "**ਜ਼ੁਕਾਮ (Cold) ਲਈ ਉਪਚਾਰ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਭਾਫ਼ ਲਓ ਅਤੇ ਗਰਮ ਪਾਣੀ ਪੀਓ। ਨੱਕ ਨੂੰ ਸਾਫ਼ ਰੱਖੋ। ਵੱਧ ਤੋਂ ਵੱਧ ਆਰਾਮ ਕਰੋ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਠੰਢੀ ਹਵਾ ਜਾਂ ਏਸੀ ਵਿੱਚ ਨਾ ਬੈਠੋ। ਠੰਢੀਆਂ ਚੀਜ਼ਾਂ ਨਾ ਖਾਓ।",
-            "sa-IN": "**प्रतिश्यायः (Cold) उपचारः**\n\n* **करणीयम्**: बाष्पग्रहणं करोतु कोष्णजलं च पिबतु। नासिकाम् स्वच्छाम् स्थापयतु। पूर्णरूपेण विश्रामं करोतु।\n* **अकरणीयम्**: शीतवातावरणे वा वातानुकूलितप्रकोष्ठे मा उपविशतु। शीतलखाद्यानि मा खादतु।"
+            "en-US": "I am sorry to hear you have a cold. Let me help you with some safe home remedies:\n\n**Steam Inhalation & Hydration**\n\n* **Do**: Drink plenty of hot fluids (herbal teas, warm soups). Inhale steam from a bowl of hot water. Rest as much as possible.\n* **Don't**: Do not consume cold items or sit in AC drafts. Avoid heavy workouts.",
+            "hi-IN": "मुझे यह सुनकर खेद है कि आपको जुकाम है। यहाँ कुछ सुरक्षित घरेलू उपाय दिए गए हैं:\n\n**भाप लेना और गर्म तरल पदार्थ**\n\n* **क्या करें**: गर्म तरल पदार्थ (हर्बल चाय, गर्म सूप) पिएं। गर्म पानी के कटोरे से भाप लें। शरीर को आराम दें।\n* **क्या न करें**: ठंडी चीजें न खाएं और ठंडी एसी (AC) हवा में न बैठें। भारी वर्कआउट से बचें।",
+            "hinglish": "Mujhe sunkar dukh hua ki aapko jukam hai. Aap ye safe home remedies try karein:\n\n**Bhaap (Steam) lein aur garam liquids pijiye**\n\n* **Kya karein**: Khoob saare garam liquids jaise herbal tea ya soup pijiye. Garam paani se bhaap lein. Jitna ho sake body ko rest dein.\n* **Kya na karein**: Thandi cheezein na khayein aur AC ki direct thandi hawa me na baithein. Heavy workout se bachein.",
+            "pa-IN": "ਮੈਨੂੰ ਅਫ਼ਸੋਸ ਹੈ ਕਿ ਤੁਹਾਨੂੰ ਜ਼ੁਕਾਮ ਹੈ। ਇੱਥੇ ਕੁਝ ਸੁਰੱਖਿਅਤ ਘਰੇਲੂ ਉਪਾਅ ਹਨ:\n\n**ਜ਼ੁਕਾਮ ਲਈ ਉਪਚਾਰ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਭਾਫ਼ ਲਓ ਅਤੇ ਗਰਮ ਪਾਣੀ ਪੀਓ। ਨੱਕ ਨੂੰ ਸਾਫ਼ ਰੱਖੋ। ਵੱਧ ਤੋਂ ਵੱਧ ਆਰਾਮ ਕਰੋ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਠੰਢੀ ਹਵਾ ਜਾਂ ਏਸੀ ਵਿੱਚ ਨਾ ਬੈਠੋ। ਠੰਢੀਆਂ ਚੀਜ਼ਾਂ ਨਾ ਖਾਓ।",
+            "sa-IN": "कष्टं जातं यत् भवतः प्रतिश्यायः अस्ति। अत्र केचन सुकरोपचाराः सन्ति:\n\n**प्रतिश्यायः उपचारः**\n\n* **करणीयम्**: बाष्पग्रहणं करोतु कोष्णजलं च पिबतु। नासिकाम् स्वच्छाम् स्थापयतु। पूर्णरूपेण विश्रामं करोतु।\n* **अकरणीयम्**: शीतवातावरणे वा वातानुकूलितप्रकोष्ठे मा उपविशतु। शीतलखाद्यानि मा खादतु।"
         },
         stomach: {
-            "en-US": "**Ginger/Peppermint Tea & Bland Diet**\n\n* **Do**: Sip warm ginger or peppermint tea. Apply a warm hot-water bag to your abdomen. Stay hydrated with small sips of water.\n* **Don't**: Do not eat spicy, oily, fatty foods. Avoid dairy, soft drinks, or caffeine.",
-            "hi-IN": "**अदरक/पुदीने की चाय और हल्का भोजन**\n\n* **क्या करें**: पेट की मांसपेशियों को आराम देने के लिए अदरक या पुदीने की चाय पिएं। पेट पर हीटिंग पैड या गर्म पानी की बोतल से सिकाई करें। पानी के छोटे-छोटे घूंट लेकर खुद को हाइड्रेटेड रखें।\n* **क्या न करें**: मसालेदार, तैलीय, वसायुक्त या भारी भोजन न खाएं। डेयरी उत्पाद, कोल्ड ड्रिंक्स या कैफीन से बचें।",
-            "pa-IN": "**ਪੇਟ ਦਰਦ (Stomach Pain) ਲਈ ਉਪਚਾਰ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਅਦਰਕ ਜਾਂ ਪੁਦੀਨੇ ਦੀ ਚਾਹ ਪੀਓ। ਪੇਟ 'ਤੇ ਗਰਮ ਪਾਣੀ ਦੀ ਬੋਤਲ ਨਾਲ ਸੇਕ ਦਿਓ। ਹਲਕਾ ਖਾਣਾ ਖਾਓ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਮਸਾਲੇਦਾਰ ਜਾਂ ਤਲਿਆ ਹੋਇਆ ਖਾਣਾ ਨਾ ਖਾਓ। ਦੁੱਧ ਵਾਲੀਆਂ ਚੀਜ਼ਾਂ ਤੋਂ ਬਚੋ।",
-            "sa-IN": "**उदरवेदना (Stomach Pain) उपचारः**\n\n* **करणीयम्**: आर्द्रकस्य वा पुदीनायाः क्वथं पिबतु। उदरे उष्णजलकूप्या सेकं करोतु। लघु सुपच्यं भोजनं करोतु।\n* **अकरणीयम्**: कटु, सतैलं वा गुरुभोजनं मा खादतु। क्षीरजन्यपदार्थान् मा सेवतु।"
+            "en-US": "I am sorry to hear you have stomach pain. Let me help you with some safe home remedies:\n\n**Ginger/Peppermint Tea & Bland Diet**\n\n* **Do**: Sip warm ginger or peppermint tea. Apply a warm hot-water bag to your abdomen. Stay hydrated with small sips of water.\n* **Don't**: Do not eat spicy, oily, fatty foods. Avoid dairy, soft drinks, or caffeine.",
+            "hi-IN": "मुझे यह सुनकर खेद है कि आपके पेट में दर्द है। यहाँ कुछ सुरक्षित घरेलू उपाय दिए गए हैं:\n\n**अदरक/पुदीने की चाय और हल्का भोजन**\n\n* **क्या करें**: पेट की मांसपेशियों को आराम देने के लिए अदरक या पुदीने की चाय पिएं। पेट पर हीटिंग पैड या गर्म पानी की बोतल से सिकाई करें। पानी के छोटे-छोटे घूंट लेकर खुद को हाइड्रेटेड रखें।\n* **क्या न करें**: मसालेदार, तैलीय, वसायुक्त या भारी भोजन न खाएं। डेयरी उत्पाद, कोल्ड ड्रिंक्स या कैफीन से बचें।",
+            "hinglish": "Mujhe sunkar dukh hua ki aapke pet me dard hai. Aap ye safe home remedies try karein:\n\n**Adrak ya pudine ki chai aur halka khana**\n\n* **Kya karein**: Pet ki muscles ko aaram dene ke liye adrak (ginger) ya pudine (peppermint) ki chai pijiye. Pet par garam paani ki botal (hot-water bag) se sikaai karein.\n* **Kya na karein**: Masaledar (spicy), oily ya bhaari khana mat khayein. Dairy products, soft drinks aur caffeine se parhez karein.",
+            "pa-IN": "ਮੈਨੂੰ ਅਫ਼ਸੋਸ ਹੈ ਕਿ ਤੁਹਾਡੇ ਪੇਟ ਵਿੱਚ ਦਰਦ ਹੈ। ਇੱਥੇ ਕੁਝ ਸੁਰੱਖਿਅਤ ਘਰੇਲੂ ਉਪਾਅ ਹਨ:\n\n**ਪੇਟ ਦਰਦ ਲਈ ਉਪਚਾਰ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਅਦਰਕ ਜਾਂ ਪੁਦੀਨੇ ਦੀ ਚਾਹ ਪੀਓ। ਪੇਟ 'ਤੇ ਗਰਮ ਪਾਣੀ ਦੀ ਬੋਤਲ ਨਾਲ ਸੇਕ ਦਿਓ। ਹਲਕਾ ਖਾਣਾ ਖਾਓ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਮਸਾਲੇਦਾਰ ਜਾਂ ਤਲਿਆ ਹੋਇਆ ਖਾਣਾ ਨਾ ਖਾਓ। ਦੁੱਧ ਵਾਲੀਆਂ ਚੀਜ਼ਾਂ ਤੋਂ ਬਚੋ।",
+            "sa-IN": "कष्टं जातं यत् भवतः उदरवेदना अस्ति। अत्र केचन सुकरोपचाराः सन्ति:\n\n**उदरवेदना उपचारः**\n\n* **करणीयम्**: आर्द्रकस्य वा पुदीनायाः क्वथं पिबतु। उदरे उष्णजलकूप्या सेकं करोतु। लघु सुपच्यं भोजनं करोतु।\n* **अकरणीयम्**: कटु, सतैलं वा गुरुभोजनं मा खादतु। क्षीरजन्यपदार्थान् मा सेवतु।"
         },
         throat: {
-            "en-US": "**Salt Water Gargle & Warm Fluids**\n\n* **Do**: Gargle with warm salt water 3-4 times a day. Sip warm broth or tea with honey. Rest your voice as much as possible.\n* **Don't**: Avoid sour, spicy, or crunchy foods. Do not drink very cold beverages.",
-            "hi-IN": "**नमक के पानी के गरारे और गर्म पेय**\n\n* **क्या करें**: दिन में कम से कम 3-4 बार गुनगुने नमक के पानी से गरारे करें। गर्म सूप, शहद के साथ हर्बल चाय या नींबू का गर्म पानी पिएं। जितना हो सके अपनी आवाज को आराम दें।\n* **क्या न करें**: खट्टी, तीखी या कुरकुरी चीजें न खाएं जिससे गले में जलन हो। ठंडे पेय या कोल्ड ड्रिंक्स न पिएं।",
-            "pa-IN": "**ਗਲੇ ਦੀ ਖਰਾਸ਼ (Sore Throat) ਲਈ ਉਪਚਾਰ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਗਰਮ ਪਾਣੀ ਨਾਲ ਦਿਨ ਵਿੱਚ 3-4 ਵਾਰ ਗਰਾਰੇ ਕਰੋ। ਕੋਸਾ ਪਾਣੀ ਜਾਂ ਸਹਿਦ ਵਾਲੀ ਚਾਹ ਪੀਓ। ਆਪਣੀ ਆਵਾਜ਼ ਨੂੰ ਆਰਾਮ ਦਿਓ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਠੰਢੀਆਂ ਚੀਜ਼ਾਂ ਅਤੇ ਖੱਟਾ ਨਾ ਖਾਓ। ਜ਼ੋਰ ਦੀ ਨਾ ਬੋਲੋ।",
-            "sa-IN": "**कण्ठखराशः (Sore Throat) उपचारः**\n\n* **करणीयम्**: कोष्णजलेन दिने त्रिचतुर्वारं गण्डूषं करोतु। मधुमिश्रितं कोष्णपेयं पिबतु। कण्ठस्वरं विश्रामयतु।\n* **अकरणीयम्**: अम्लखाद्यानि वा शीतलपेयानि मा पिबतु। उच्चैः भाषणं मा करोतु।"
+            "en-US": "I am sorry to hear you have a sore throat. Let me help you with some safe home remedies:\n\n**Warm Salt Gargle & Warm Fluids**\n\n* **Do**: Gargle with warm salt water 3-4 times a day. Sip warm broth or tea with honey. Rest your voice as much as possible.\n* **Don't**: Avoid sour, spicy, or crunchy foods. Do not drink very cold beverages.",
+            "hi-IN": "मुझे यह सुनकर खेद है कि आपके गले में खराश है। यहाँ कुछ सुरक्षित घरेलू उपाय दिए गए हैं:\n\n**नमक के पानी के गरारे और गर्म पेय**\n\n* **क्या करें**: दिन में कम से कम 3-4 बार गुनगुने नमक के पानी से गरारे करें। गर्म सूप, शहद के साथ हर्बल चाय या नींबू का गर्म पानी पिएं। जितना हो सके अपनी आवाज को आराम दें।\n* **क्या न करें**: खट्टी, तीखी या कुरकुरी चीजें न खाएं जिससे गले में जलन हो। ठंडे पेय या कोल्ड ड्रिंक्स न पिएं।",
+            "hinglish": "Mujhe sunkar dukh hua ki aapke gale me kharash hai. Aap ye safe home remedies try karein:\n\n**Gungune namak ke paani se garare aur garam liquids**\n\n* **Kya karein**: Din me 3-4 baar gungune namak ke paani se garare (gargles) karein. Garam soup ya shahad ke saath tea pijiye. Apni aawaz ko aaram dein.\n* **Kya na karein**: Khatte (sour), teekhe (spicy) ya kurkure (crunchy) foods mat khayein. Zyada thande drinks se bachein.",
+            "pa-IN": "ਮੈਨੂੰ ਅਫ਼ਸੋਸ ਹੈ ਕਿ ਤੁਹਾਡੇ ਗਲੇ ਵਿੱਚ ਖਰਾਸ਼ ਹੈ। ਇੱਥੇ ਕੁਝ ਸੁਰੱਖਿਅਤ ਘਰੇਲੂ ਉਪਾਅ ਹਨ:\n\n**ਗਲੇ ਦੀ ਖਰਾਸ਼ ਲਈ ਉਪਚਾਰ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਗਰਮ ਪਾਣੀ ਨਾਲ ਦਿਨ ਵਿੱਚ 3-4 ਵਾਰ ਗਰਾਰੇ ਕਰੋ। ਕੋਸਾ ਪਾਣੀ ਜਾਂ ਸਹਿਦ ਵਾਲੀ ਚਾਹ ਪੀਓ। ਆਪਣੀ ਆਵਾਜ਼ ਨੂੰ ਆਰਾਮ ਦਿਓ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਠੰਢੀਆਂ ਚੀਜ਼ਾਂ ਅਤੇ ਖੱਟਾ ਨਾ ਖਾਓ। ਜ਼ੋਰ ਦੀ ਨਾ ਬੋਲੋ।",
+            "sa-IN": "कष्टं जातं यत् भवतः कण्ठखराशः अस्ति। अत्र केचन सुकरोपचाराः सन्ति:\n\n**कण्ठखराशः उपचारः**\n\n* **करणीयम्**: कोष्णजलेन दिने त्रिचतुर्वारं गण्डूषं करोतु। कण्ठस्वरं विश्रामयतु।\n* **अकरणीयम्**: अम्लखाद्यानि वा शीतलपेयानि मा पिबतु। उच्चैः भाषणं मा करोतु।"
         },
         stress: {
-            "en-US": "**Deep Breathing & Grounding**\n\n* **Do**: Practice the 4-7-8 breathing method (inhale 4s, hold 7s, exhale 8s). Focus on 5 items in your surroundings. Sit comfortably and loosen tight muscles.\n* **Don't**: Do not scroll on social media or search symptoms. Do not consume caffeine.",
-            "hi-IN": "**गहरी सांस लेना और ग्राउंडिंग**\n\n* **क्या करें**: 4-7-8 सांस लेने की विधि अपनाएं (4 सेकंड सांस लें, 7 सेकंड रोकें, 8 सेकंड छोड़ें)। आस-पास की चीजों पर ध्यान केंद्रित करें। आरामदायक स्थिति में बैठें और ढीला छोड़ें।\n* **क्या न करें**: सोशल मीडिया न चलाएं और इंटरनेट पर लक्षण न खोजें। चाय या कॉफी का सेवन न करें।",
-            "pa-IN": "**ਤਣਾਅ ਅਤੇ ਘਬਰਾਹਟ (Stress) ਲਈ ਉਪਚਾਰ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਡੂੰਘੇ ਸਾਹ ਲਓ (4-7-8 ਵਿਧੀ)। ਇੱਕ ਗਲਾਸ ਠੰਢਾ ਪਾਣੀ ਹੌਲੀ-ਹੌਲੀ ਪੀਓ। ਸ਼ਾਂਤ ਥਾਂ 'ਤੇ ਬੈਠੋ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਫੋਨ ਜਾਂ ਸੋਸ਼ਲ ਮੀਡੀਆ ਨਾ ਦੇਖੋ। ਚਿੰਤਾ ਨਾ ਕਰੋ।",
-            "sa-IN": "**मानसिकतनावः (Stress) उपचारः**\n\n* **करणीयम्**: दीर्घं श्वसितु (४-७-८ नियमः)। एकचषकं शीतलजलं मन्दं मन्दं पिबतु। शान्ते स्थाने उपविशतु।\n* **अकरणीयम्**: चलदूरभाषम् मा पश्यतु। वृथा चिन्तनं मा करोतु।"
+            "en-US": "I am sorry to hear you are feeling anxious. Let me help you with some calming techniques:\n\n**Deep Breathing & Grounding**\n\n* **Do**: Practice the 4-7-8 breathing method (inhale 4s, hold 7s, exhale 8s). Focus on 5 items in your surroundings. Sit comfortably and loosen tight muscles.\n* **Don't**: Do not scroll on social media or search symptoms. Do not consume caffeine.",
+            "hi-IN": "मुझे यह सुनकर खेद है कि आप तनाव महसूस कर रहे हैं। यहाँ कुछ शांत करने वाले उपाय दिए गए हैं:\n\n**गहरी सांस लेना और ग्राउंडिंग**\n\n* **क्या करें**: 4-7-8 सांस लेने की विधि अपनाएं (4 सेकंड सांस लें, 7 सेकंड रोकें, 8 सेकंड छोड़ें)। आस-पास की चीजों पर ध्यान केंद्रित करें। आरामदायक स्थिति में बैठें और ढीला छोड़ें।\n* **क्या न करें**: सोशल मीडिया न चलाएं और इंटरनेट पर लक्षण न खोजें। चाय या कॉफी का सेवन न करें।",
+            "hinglish": "Mujhe sunkar dukh hua ki aap stress me hain. Aap ye calming techniques try karein:\n\n**Gahri saans lein aur grounding karein**\n\n* **Kya karein**: 4-7-8 breathing method practice karein (4s saans lein, 7s rokein, 8s chodein). Apne aas-paas ki 5 cheezon par focus karein. Aaram se baithein.\n* **Kya na karein**: Social media scroll mat karein aur net par symptoms mat khojein. Tea ya coffee se parhez karein.",
+            "pa-IN": "ਮੈਨੂੰ ਅਫ਼ਸੋਸ ਹੈ ਕਿ ਤੁਸੀਂ ਚਿੰਤਾ ਮਹਿਸੂਸ ਕਰ ਰਹੇ ਹੋ। ਇੱਥੇ ਕੁਝ ਘਰੇਲੂ ਉਪਾਅ ਹਨ:\n\n**ਤਣਾਅ ਅਤੇ ਚਿੰਤਾ ਲਈ ਉਪਚਾਰ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਡੂੰਘੇ ਸਾਹ ਲਓ (4-7-8 ਵਿਧੀ)। ਇੱਕ ਗਲਾਸ ਠੰਢਾ ਪਾਣੀ ਹੌਲੀ-ਹੌਲੀ ਪੀਓ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਫੋਨ ਜਾਂ ਸੋਸ਼ਲ ਮੀਡੀਆ ਨਾ ਦੇਖੋ। ਚਿੰਤਾ ਨਾ ਕਰੋ।",
+            "sa-IN": "कष्टं जातं यत् भवान् मानसिकतनावं अनुभवति। अत्र केचन सुकरोपचाराः सन्ति:\n\n**मानसिकतनावः उपचारः**\n\n* **करणीयम्**: दीर्घं श्वसितु (४-७-८ नियमः)। एकचषकं शीतलजलं मन्दं मन्दं पिबतु।\n* **अकरणीयम्**: चलदूरभाषम् मा पश्यतु। वृथा चिन्तनं मा करोतु।"
         },
         general: {
-            "en-US": "**General Rest & Hydration**\n\n* **Do**: Sit or lie down in a comfortable position immediately. Drink a warm glass of water or herbal tea. Stay hydrated and rest.\n* **Don't**: Avoid physically demanding chores. Do not ignore symptoms if they worsen.",
-            "hi-IN": "**सामान्य आराम और जलपान**\n\n* **क्या करें**: तुरंत किसी आरामदायक स्थिति में बैठें या लेट जाएं। गुनगुना पानी या हर्बल चाय धीरे-धीरे पिएं।\n* **क्या न करें**: शारीरिक श्रम वाले काम न करें। यदि लक्षण बिगड़ते हैं, तो उन्हें अनदेखा न करें।",
-            "pa-IN": "**ਆਮ ਆਰਾਮ ਅਤੇ ਪਾਣੀ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਆਰਾਮਦਾਇਕ ਸਥਿਤੀ ਵਿੱਚ ਲੇਟ ਜਾਓ। ਕੋਸਾ ਪਾਣੀ ਪੀਓ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਸ਼ਾਰੀਰਿਕ ਮਿਹਨਤ ਨਾ ਕਰੋ।",
-            "sa-IN": "**सामान्यविश्रामः जलपानं च**\n\n* **करणीयम्**: सुखदस्थितौ शयनं करोतु। कोष्णं जलं पिबतु।\n* **अकरणीयम्**: शारीरिकश्रमं मा करोतु।"
+            "en-US": "I am sorry to hear you are not feeling well. Let me help you with some safe home remedies:\n\n**General Rest & Hydration**\n\n* **Do**: Sit or lie down in a comfortable position immediately. Drink a warm glass of water or herbal tea. Stay hydrated and rest.\n* **Don't**: Avoid physically demanding chores. Do not ignore symptoms if they worsen.",
+            "hi-IN": "मुझे यह सुनकर खेद है कि आप अस्वस्थ महसूस कर रहे हैं। यहाँ कुछ सुरक्षित घरेलू उपाय दिए गए हैं:\n\n**सामान्य आराम और जलपान**\n\n* **क्या करें**: तुरंत किसी आरामदायक स्थिति में बैठें या लेट जाएं। गुनगुना पानी या हर्बल चाय धीरे-धीरे पिएं।\n* **क्या न करें**: शारीरिक श्रम वाले काम न करें। यदि लक्षण बिगड़ते हैं, तो उन्हें अनदेखा न करें।",
+            "hinglish": "Mujhe sunkar dukh hua ki aap achha feel nahi kar rahe hain. Aap ye safe home remedies try karein:\n\n**Aaram karein aur hydrated rahein**\n\n* **Kya karein**: Turant aaramdayak position me baith ya let jayein. Ek glass gunguna paani ya herbal tea pijiye. Khoob rest karein.\n* **Kya na karein**: Mehnat ya bhaari kaam bilkul na karein. Agar symptoms bigadte hain to ignore na karein.",
+            "pa-IN": "ਮੈਨੂੰ ਅਫ਼ਸੋਸ ਹੈ ਕਿ ਤੁਸੀਂ ਠੀਕ ਮਹਿਸੂਸ ਨਹੀਂ ਕਰ ਰਹੇ ਹੋ। ਇੱਥੇ ਕੁਝ ਸੁਰੱਖਿਅਤ ਘਰੇਲੂ ਉਪਾਅ ਹਨ:\n\n**ਆਮ ਆਰਾਮ ਅਤੇ ਪਾਣੀ**\n\n* **ਕੀ ਕਰਨਾ ਹੈ**: ਆਰਾਮਦਾਇਕ ਸਥਿਤੀ ਵਿੱਚ ਲੇਟ ਜਾਓ। ਕੋਸਾ ਪਾਣੀ ਪੀਓ।\n* **ਕੀ ਨਹੀਂ ਕਰਨਾ**: ਸਾਰੀਰਿਕ ਮਿਹਨਤ ਨਾ ਕਰੋ।",
+            "sa-IN": "कष्टं जातं यत् भवान् स्वस्थः नास्ति। अत्र केचन सुकरोपचाराः सन्ति:\n\n**सामान्यविश्रामः जलपानं च**\n\n* **करणीयम्**: सुखदस्थितौ शयनं करोतु। कोष्णं जलं पिबतु।\n* **अकरणीयम्**: शारीरिकश्रमं मा करोतु।"
         }
     };
 
     const getLocalResponse = (text) => {
         const textLower = text.toLowerCase();
         const lang = detectSpeechLanguage(text);
+        let targetLang = lang;
+        if (lang === 'hi-IN') {
+            if (!/[\u0900-\u097F]/.test(text)) {
+                targetLang = "hinglish";
+            }
+        }
         
         let symptomKey = "general";
         
-        if (textLower.includes("head") || textLower.includes("migraine") || textLower.includes("sir dard") || textLower.includes("सिर") || textLower.includes("दर्द") || textLower.includes("ਸਿਰ ਦਰਦ") || textLower.includes("शिरोवेदना") || textLower.includes("हेडेक") || textLower.includes("हैडेक") || textLower.includes("माइग्रेन")) {
+        if (textLower.includes("head") || textLower.includes("migraine") || textLower.includes("sir dard") || textLower.includes("सिर") || textLower.includes("दर्द") || textLower.includes("ਸਿਰ ਦਰਦ") || textLower.includes("शिरोवेदना") || textLower.includes("हेਡੇक") || textLower.includes("हैडेक") || textLower.includes("माइग्रेन")) {
             symptomKey = "headache";
         } else if (textLower.includes("fever") || textLower.includes("temperature") || textLower.includes("body hot") || textLower.includes("बुखार") || textLower.includes("तापमान") || textLower.includes("गरम") || textLower.includes("ਬੁਖਾਰ") || textLower.includes("ਜ੍ਵਰ") || textLower.includes("ज्वर") || textLower.includes("फीवर") || textLower.includes("ताप")) {
             symptomKey = "fever";
@@ -860,10 +874,9 @@ Guidelines:
         }
 
         const matches = localSymptomDatabase[symptomKey];
-        let reply = matches[lang] || matches["en-US"];
-        return reply + "\n\n*(Offline Simulation Mode)*";
+        let reply = matches[targetLang] || matches["en-US"];
+        return reply;
     };
-
     // --------------------------------------------------------------------------
     // Follow-up check-in timer logic
     // --------------------------------------------------------------------------
@@ -1062,19 +1075,8 @@ Guidelines:
                     aiResponse = await callHuggingFaceAPI(text);
                 } catch (hfErr) {
                     console.warn("Hugging Face API call failed, falling back to local database:", hfErr);
-                    if (hfErr.message.startsWith("MODEL_LOADING")) {
-                        const loadingTime = hfErr.message.split(":")[1] || 20;
-                        addNotificationMessage(`The Hugging Face model is currently loading (estimated: ${loadingTime}s). Serving local response.`);
-                    } else if (hfErr.message === "HF_TOKEN_MISSING") {
-                        addNotificationMessage("Hugging Face API Token is missing. Please paste a valid token in the sidebar settings.");
-                    } else if (hfErr.message === "HF_GATED_MODEL") {
-                        addNotificationMessage("Gated Model Terms Required: To use MedGemma, make sure your token has accepted terms at 'huggingface.co/google/medgemma-1.5-4b-it'. Falling back to local response.");
-                    } else if (hfErr.message === "HF_UNAUTHORIZED") {
-                        addNotificationMessage("Authorization failed. Your HF Token is invalid or expired. Please update it in the sidebar settings.");
-                    } else {
-                        addNotificationMessage("Hugging Face Inference call failed. Serving local simulated response.");
-                    }
-                    await new Promise(resolve => setTimeout(resolve, 800));
+                    // Silently fall back to personalized local response without displaying warning banners in chat
+                    await new Promise(resolve => setTimeout(resolve, 600));
                     aiResponse = getLocalResponse(text);
                 }
             } else if (config.PROVIDER === "gemini") {
